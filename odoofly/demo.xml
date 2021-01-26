@@ -1,0 +1,97 @@
+<openerp>
+    <data>
+
+    <!-- Aeropuertos -->
+
+        <record model="odoofly.aeropuerto" id="1">
+            <field name="name">Aeropuerto Madrid-Barajas Adolfo Suarez</field>
+            <field name="pais">69</field>
+        </record>
+        <record model="odoofly.aeropuerto" id="2">
+            <field name="name">Aeropuerto Charles De Gaulle</field>
+            <field name="pais">76</field>
+        </record>
+        <record model="odoofly.aeropuerto" id="aeropuerto3">
+            <field name="name">Londres Heathrow</field>
+            <field name="pais">233</field>
+        </record>
+        <record model="odoofly.aeropuerto" id="aeropuerto4">
+            <field name="name">Aeropuerto de Zurich </field>
+            <field name="pais">44</field>
+        </record>
+        <record model="odoofly.aeropuerto" id="aeropuerto5">
+            <field name="name">Aeropuerto Internacional de Hong Kong </field>
+            <field name="pais">95</field>
+        </record>
+        <record model="odoofly.aeropuerto" id="aeropuerto6">
+            <field name="name">Tokio Haneda</field>
+            <field name="pais">114</field>
+        </record>
+        <record model="odoofly.aeropuerto" id="aeropuerto7">
+            <field name="name">Singapur Changi</field>
+            <field name="pais">199</field>
+        </record>
+
+    <!-- Aviones -->
+
+        <record model="odoofly.avion" id="avion1">
+            <field name="name">AACU</field>
+            <field name="numeroAsientos">220</field>
+            <field name="modelo">Airbus A320</field>
+        </record>
+        <record model="odoofly.avion" id="avion2">
+            <field name="name">VHEG</field>
+            <field name="numeroAsientos">220</field>
+            <field name="modelo">Airbus A320</field>        
+        </record>
+        <record model="odoofly.avion" id="avion3">
+            <field name="name">EEUG</field>
+            <field name="numeroAsientos">220</field>
+            <field name="modelo">Airbus A320</field>       
+        </record>
+        <record model="odoofly.avion" id="avion4">
+            <field name="name">NRIG</field>
+            <field name="numeroAsientos">500</field>
+            <field name="modelo">Boeing 777</field>        
+        </record>
+        <record model="odoofly.avion" id="avion5">
+            <field name="name">DIEO</field>
+            <field name="numeroAsientos">500</field>
+            <field name="modelo">Boeing 777</field>        
+        </record>
+            <record model="odoofly.avion" id="avion6">
+            <field name="name">NGIR</field>
+            <field name="numeroAsientos">500</field>
+            <field name="modelo">Boeing 777</field>
+        </record>
+        <record model="odoofly.avion" id="avion7">
+            <field name="name">DJID</field>
+            <field name="numeroAsientos">220</field>
+            <field name="modelo">Airbus A320</field>        
+        </record>
+        <record model="odoofly.avion" id="avion8">
+            <field name="name">KDOA</field>
+            <field name="numeroAsientos">30</field>
+            <field name="modelo">Lockheed L-1011 TriStar</field>       
+        </record>
+        <record model="odoofly.avion" id="avion9">
+            <field name="name">SEMG</field>
+            <field name="numeroAsientos">30</field>
+            <field name="modelo">Lockheed L-1011 TriStar</field>        
+        </record>
+        <record model="odoofly.avion" id="avion10">
+            <field name="name">Private-ZZZR</field>
+            <field name="numeroAsientos">15</field>
+            <field name="modelo">Challenger 600</field>        
+        </record>
+        <record model="odoofly.avion" id="avion11">
+            <field name="name">Private-ZJGR</field>
+            <field name="numeroAsientos">12</field>
+            <field name="modelo">Learjet 45</field>        
+        </record>
+
+        <!-- PAsajeros -->
+
+
+    </data>
+</openerp>

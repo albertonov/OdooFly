@@ -1,0 +1,163 @@
+<openerp>
+    <data>
+
+
+        <!-- Listado de libros -->
+        <record model="ir.actions.act_window" id="avion_list_action">
+            <field name="name">Aviones</field>
+            <field name="res_model">odoofly.avion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Añadir un nuevo Avion...
+                </p>
+            </field>
+        </record>
+
+
+        <!-- Listado de Trayectos -->
+        <record model="ir.actions.act_window" id="trayecto_list_action">
+            <field name="name">Trayectos</field>
+            <field name="res_model">odoofly.trayecto</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- Listado de Aeropuertos -->
+        <record model="ir.actions.act_window" id="aeropuerto_list_action">
+            <field name="name">Aeropuertos</field>
+            <field name="res_model">odoofly.aeropuerto</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+        <!-- Override el listado de aviones -->
+        <record model="ir.ui.view" id="avion_tree_view">
+            <field name="name">avion.tree</field>
+            <field name="model">odoofly.avion</field>
+            <field name="arch" type="xml">
+                <tree string="Avion Tree">
+                    <field name="name"/>
+                    <field name="modelo"/>
+                    <field name="numeroAsientos"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Override el listado de trayectos -->
+        <record model="ir.ui.view" id="trayecto_tree_view">
+            <field name="name">trayecto.tree</field>
+            <field name="model">odoofly.trayecto</field>
+            <field name="arch" type="xml">
+                <tree string="Trayecto Tree">
+                    <field name="name"/>
+                    <field name="avion_id"/>
+                    <field name="fecha_salida"/>
+                    <field name="hora_salida"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Override el listado de aeropuertos -->
+        <record model="ir.ui.view" id="aeropuerto_tree_view">
+            <field name="name">aeropuerto.tree</field>
+            <field name="model">odoofly.aeropuerto</field>
+            <field name="arch" type="xml">
+                <tree string="Aeropuerto Tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <!-- FOrmulario interior de avion -->
+        <record model="ir.ui.view" id="avion_form_view">
+            <field name="name">avion.form</field>
+            <field name="model">odoofly.avion</field>
+            <field name="arch" type="xml">
+                <form string="Avion Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="modelo"/>
+                            <field name="numeroAsientos"/>
+                        </group>                                                                                                                                             
+                        <notebook>
+                            <page string="Trayectos">
+                                <field name="trayectos_ids">
+                                    <tree string="Trayectos registrados">
+                                        <field name="name"/>
+                                        <field name="origen"/>
+                                        <field name="destino"/>
+                                        <field name="fecha_salida"/>
+                                    </tree>
+                                </field>
+                             </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+
+
+        <!-- FOrmulario interior de Trayecto -->
+        <record model="ir.ui.view" id="trayecto_form_view">
+            <field name="name">trayecto.form</field>
+            <field name="model">odoofly.trayecto</field>
+            <field name="arch" type="xml">
+                <form string="Trayecto Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="fecha_salida"/>
+                            <field name="fecha_llegada"/>
+                            <field name="hora_salida"/>
+                            <field name="hora_llegada"/>
+                            <field name="avion_id"/>
+                            <field name="asientos_disponibles" />
+
+                        </group>
+                        <notebook>
+                            <page string="Informacion del Vuelo">
+                                Origen: <field name="origen"/>
+                                Destino:<field name="destino"/>
+                             </page>
+
+                            <page string="Pasajeros">
+                                <field name="pasajeros">
+                                    <tree string="Pasajeros a">
+                                        <field name="name"/>
+                                        <field name="phone"/>               
+                                    </tree>
+                                </field>
+                             </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+                <!-- top level menu: no parent -->
+        <menuitem id="main_odoofly_menu" name="OdooFly"/>
+
+        <menuitem id="odoofly_menu" name="OdooFly"
+                  parent="main_odoofly_menu"/>
+
+        <menuitem id="aviones_menu" name="Aviones" parent="odoofly_menu"
+                  action="avion_list_action"/>
+
+
+        <menuitem id="trayectos_menu" name="Trayectos" parent="odoofly_menu"
+                  action="trayecto_list_action"/>
+                
+       <menuitem id="aeropuertos_menu" name="Aeropuertos" parent="odoofly_menu"
+                  action="aeropuerto_list_action"/>
+
+    </data>
+</openerp>
